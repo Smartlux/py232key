@@ -1,13 +1,12 @@
 # py232key
 
-This Python script reads data from a serial port, applies a regular expression to extract specific information, and simulates keystrokes based on the extracted data. It's useful for automating data entry from serial devices.
+This Python script reads data from a serial port, applies a regular expression to extract specific information, and simulates keystrokes based on the extracted data. It's useful for automating data entry from measuring devices with an RS-232 port, such as scales and balances.
 
 ## Features
 
 - Configurable serial port settings (port, baud rate, data bits, stop bits, parity)
-- Custom regex pattern for data extraction
+- Custom regex pattern for data extraction (extracts first number in each line by default)
 - Simulates keyboard input based on extracted data
-- Detailed error handling and logging
 
 ## Requirements
 
@@ -76,7 +75,7 @@ To terminate the script, press `Ctrl+C` in the terminal where the script is runn
 1. The script opens the specified serial port with the given settings.
 2. It continually reads lines from the serial port.
 3. Each line is searched for a match using the specified regex pattern.
-4. If a match is found, the script extracts the data and simulates typing it, followed by pressing Enter.
+4. If a match is found, the script extracts the data from the first capturing group and simulates typing it, followed by pressing Enter.
 5. The process repeats until the script is terminated or an error occurs.
 
 ### Line Termination
