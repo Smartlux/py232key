@@ -37,14 +37,14 @@ python py232key.py -p PORT [options]
 
 ### Required Arguments:
 
-- `-p PORT, --port PORT`: The serial port to use (e.g., /dev/ttyUSB0 on Linux or COM3 on Windows)
+- `PORT`: The serial port to use (e.g., /dev/ttyUSB0 on Linux or COM3 on Windows)
 
 ### Optional Arguments:
 
 - `-b BAUD, --baud BAUD`: Baud rate (default: 9600)
 - `-d {5,6,7,8}, --databits {5,6,7,8}`: Number of data bits (default: 8)
 - `-s {1,1.5,2}, --stopbits {1,1.5,2}`: Number of stop bits (default: 1)
-- `--parity {N,E,O,M,S}`: Parity (default: N)
+- `-p {N,E,O,M,S}. --parity {N,E,O,M,S}`: Parity (default: N)
 - `-r REGEX, --regex REGEX`: Custom regex for matching (default: '(-?[0-9]+\.?[0-9]*)')
 - `-e ENCODING, --encoding ENCODING`: Encoding for serial data (default: ASCII)
 - `-h, --help`: Show help message and exit
@@ -57,17 +57,17 @@ To terminate the script, press `Ctrl+C` in the terminal where the script is runn
 
 1. Basic usage (extract the first number using default settings):
    ```
-   python py232key.py -p COM3
+   python py232key.py /dev/ttyUSB0
    ```
 
 2. Using 2400 baud, 7 data bits, and even parity:
    ```
-   python py232key.py -p COM3 -b 2400 -d 7 --parity E
+   python py232key.py COM3 -b 2400 -d 7 --parity E
    ```
 
 3. Using a custom regex to extract numbers after 'N' with default parameters:
    ```
-   python py232key.py -p COM3 -r "^N\ *?([0-9]*\.?[0-9]+)"
+   python py232key.py /dev/ttyUSB0 -r "^N\ *?([0-9]*\.?[0-9]+)"
    ```
 
 ## How It Works

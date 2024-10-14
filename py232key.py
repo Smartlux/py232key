@@ -5,11 +5,11 @@ from pynput.keyboard import Controller, Key
 
 # Set up argument parser
 parser = argparse.ArgumentParser(description="Read data from a serial port and simulate keystrokes.")
-parser.add_argument('-p', '--port', required=True, help="The serial port to use (e.g., /dev/ttyUSB0 on Linux or COM3 on Windows)")
+parser.add_argument('port', help="The serial port to use (e.g., /dev/ttyUSB0 on Linux or COM3 on Windows)")
 parser.add_argument('-b', '--baud', type=int, default=9600, help="Baud rate (default: 9600)")
 parser.add_argument('-d', '--databits', type=int, choices=[5, 6, 7, 8], default=8, help="Number of data bits (default: 8)")
 parser.add_argument('-s', '--stopbits', type=float, choices=[1, 1.5, 2], default=1, help="Number of stop bits (default: 1)")
-parser.add_argument('--parity', choices=['N', 'E', 'O', 'M', 'S'], default='N', help="Parity (default: N)")
+parser.add_argument('-p', '--parity', choices=['N', 'E', 'O', 'M', 'S'], default='N', help="Parity (default: N)")
 parser.add_argument('-r', '--regex', default=r'(-?[0-9]+\.?[0-9]*)', help="Custom regex for matching (default: '(-?[0-9]+\.?[0-9]*)')")
 parser.add_argument('-e', '--encoding', default='ASCII', help="Encoding for serial data (default: ASCII)")
 
@@ -39,7 +39,7 @@ try:
             print(f"Error reading from serial port: {e}")
             break
         except UnicodeDecodeError as e:
-            print(f"Error decoding data: {e}. This might indicate a serial port misconfiguration.")
+            print(f"Error decoding data: {e}. This might indicate a serial port misconfiguration (e.g. wrong baud rate or number of data bits).")
             break
 
         if line:
