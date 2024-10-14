@@ -19,8 +19,8 @@ This Python script reads data from a serial port, applies a regular expression t
 
 1. Clone this repository:
    ```
-   git clone https://github.com/yourusername/serial-port-reader.git
-   cd serial-port-reader
+   git clone https://github.com/Smartlux/py232key.git
+   cd py232key
    ```
 
 2. Install the required packages:
