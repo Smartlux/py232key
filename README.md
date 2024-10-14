@@ -33,7 +33,7 @@ This Python script reads data from a serial port, applies a regular expression t
 Run the script from the command line with the following syntax:
 
 ```
-python serial_reader.py -p PORT [options]
+python py232key.py -p PORT [options]
 ```
 
 ### Required Arguments:
@@ -58,17 +58,17 @@ To terminate the script, press `Ctrl+C` in the terminal where the script is runn
 
 1. Basic usage (extract the first number using default settings):
    ```
-   python serial_reader.py -p COM3
+   python py232key.py -p COM3
    ```
 
 2. Using 2400 baud, 7 data bits, and even parity:
    ```
-   python serial_reader.py -p COM3 -b 2400 -d 7 --parity E
+   python py232key.py -p COM3 -b 2400 -d 7 --parity E
    ```
 
 3. Using a custom regex to extract numbers after 'N' with default parameters:
    ```
-   python serial_reader.py -p COM3 -r "^N\ *?([0-9]*\.?[0-9]+)"
+   python py232key.py -p COM3 -r "^N\ *?([0-9]*\.?[0-9]+)"
    ```
 
 ## How It Works
