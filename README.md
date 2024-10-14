@@ -106,10 +106,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the GNU General Public License v3.0 (GPLv3). This license allows commercial use but requires that any modifications to the code must be made available under the same open-source terms. For more details, see the [LICENSE](LICENSE) file or visit [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-### Important Notice for Linux Users on Wayland
-
-If you are using Linux with Wayland, please be aware that `pynput` is facing significant limitations which may affect the keystroke simulation functionality. For more information and updates, please refer to this issue: [pynput Issue #331](https://github.com/moses-palmer/pynput/issues/331).
-
 ## Asking for help
 
 Before asking for help, please ensure that your serial device is properly configured and sending data to the specified port. You can test this using a terminal application to confirm that data is being received.
@@ -121,3 +117,7 @@ Here are some recommended terminal applications:
 - **macOS**: [CoolTerm](https://freeware.the-meiers.org/)
 
 If the device is sending data and you still encounter issues, feel free to open a GitHub issue and provide detailed information about the problem.
+
+### Important Notice for Linux Users on Wayland
+
+If you are using Linux with Wayland, please be aware that `pynput` is facing significant limitations which may affect the keystroke simulation functionality. For more information and updates, please refer to this issue: [pynput Issue #331](https://github.com/moses-palmer/pynput/issues/331).
