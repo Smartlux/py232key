@@ -2,6 +2,8 @@
 
 This Python script reads data from a serial port, applies a regular expression to extract specific information, and simulates keystrokes based on the extracted data. It's useful for automating data entry from measuring devices with an RS-232 port, such as scales and balances.
 
+It is meant to be an open-source alternative to our [232key virtual keyboard wedge](https://www.232key.com) software that runs under Windows, Linux and macOS.
+
 ## Features
 
 - Configurable serial port settings (port, baud rate, data bits, stop bits, parity)
@@ -103,7 +105,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 (GPLv3). This license allows commercial use but requires that any modifications to the code must be made available under the same open-source terms. For more details, see the [LICENSE](LICENSE) file or visit [https://www.gnu.org/licenses/gpl-3.0.en.html](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This project is licensed under the GNU Lesser General Public License v3.0 (LGPLv3). This license allows commercial use and linking to proprietary software, but requires that any modifications to the original code must be made available under the same open-source terms when distributed. For more details, see the [LICENSE](LICENSE) file or visit [https://www.gnu.org/licenses/lgpl-3.0.html](https://www.gnu.org/licenses/lgpl-3.0.html).
 
 ## Asking for help
 
