@@ -2,13 +2,13 @@
 
 This Python script reads data from a serial port, applies a regular expression to extract specific information, and simulates keystrokes based on the extracted data. It's useful for automating data entry from measuring devices with an RS-232 port, such as scales and balances.
 
-It is meant to be an open-source alternative to our [232key virtual keyboard wedge](https://www.232key.com) software that runs under Windows, Linux and macOS.
+It is meant to be an open-source alternative to our [232key virtual keyboard wedge](https://www.232key.com) software and runs under Windows, Linux and macOS.
 
 ## Features
 
 - Configurable serial port settings (port, baud rate, data bits, stop bits, parity)
 - Custom regex pattern for data extraction (extracts first number in each line by default)
-- Simulates keyboard input based on extracted data
+- Simulates keyboard input based on extracted data using [pynput](https://pypi.org/project/pynput/)
 
 ## Requirements
 
@@ -21,9 +21,11 @@ It is meant to be an open-source alternative to our [232key virtual keyboard wed
 1. Clone this repository:
    ```
    git clone https://github.com/Smartlux/py232key.git
+   ```
+   ```
    cd py232key
    ```
-
+   
 2. Install the required packages:
    ```
    pip install pyserial pynput
@@ -34,7 +36,7 @@ It is meant to be an open-source alternative to our [232key virtual keyboard wed
 Run the script from the command line with the following syntax:
 
 ```
-python py232key.py -p PORT [options]
+python py232key.py PORT [options]
 ```
 
 ### Required Arguments:
@@ -82,13 +84,11 @@ To terminate the script, press `Ctrl+C` in the terminal where the script is runn
 
 ### Line Termination
 
-The `ser.readline()` function reads until it encounters a line terminator. By default, it recognizes the following as line terminators:
+The `ser.readline()` function returns when it encounters the `\n` terminator (LF, line feed).
 
-- `\n` (LF, line feed)
-- `\r` (CR, carriage return)
-- `\r\n` (CRLF, carriage return + line feed)
+If your serial device uses a different line terminator, the function will return after one second (timeout).
 
-If your serial device uses a different line terminator, you may need to modify the script to handle it appropriately.
+See the [pySerial documentation](https://pyserial.readthedocs.io/en/latest/shortintro.html#shortintro-readline) for further information.
 
 ## Error Handling
 
@@ -101,7 +101,7 @@ Error messages are printed to the console for debugging purposes.
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please feel free to submit a pull request.
 
 ## License
 
@@ -117,7 +117,7 @@ The name "232key" is a registered trademark of [Smartlux SARL](https://www.smart
 
 ## Asking for help
 
-Before asking for help, please ensure that your serial device is properly configured and sending data to the specified port. You can test this using a terminal application to confirm that data is being received.
+Before asking for help, please ensure that your serial device is properly configured and connecting and that it is actually sending data to the specified port. You can test this using a terminal application to confirm that data is being received.
 
 Here are some recommended terminal applications:
 
